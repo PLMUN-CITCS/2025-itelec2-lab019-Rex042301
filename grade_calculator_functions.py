@@ -3,7 +3,7 @@ def get_student_score():
     Ensures the input is a number between 0 and 100."""
     while True:
         try:
-            score = float(input("Enter your score: "))
+            score = int(input("Enter your score: "))
             if 0 <= score <= 100:
                 return score
             else:
@@ -11,7 +11,7 @@ def get_student_score():
         except ValueError:
             print("Invalid input. Please enter a numerical value.")
 
-def calculate_grade(score: int) -> str:
+def calculate_grade(score):
     """Takes the score as input and returns the corresponding grade.
     Grading scale:
         90 - 100: A
@@ -35,6 +35,6 @@ def main():
     score = get_student_score()
     grade = calculate_grade(score)
     print(f"Your Grade is: {grade}")
-
-if __name__== "__main__":
+    
+if __name__ == "__main__":
     main()
